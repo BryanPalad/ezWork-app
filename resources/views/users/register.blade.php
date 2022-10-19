@@ -1,5 +1,5 @@
 <x-layout>
-    <x-card class='p-10 max-w-lg mx-auto mt-24'>
+    <x-card class='p-10 max-w-lg mx-auto mt-16'>
                      <header class="text-center">
                          <h2 class="text-2xl font-bold uppercase mb-1">
                              Register
@@ -88,11 +88,12 @@
                          <div class="mt-8">
                              <p>
                                  Already have an account?
-                                 <a href="/login" class="text-black hover:text-title"
-                                     >Login</a
+                                 <a href="/login" class="text-black hover:text-title font-medium"
+                                     >Sign in</a
                                  >
                              </p>
                          </div>
                      </form>
     </x-card>
+    <x-footer class='fixed bottom-0 left-0'/> 
  </x-layout>

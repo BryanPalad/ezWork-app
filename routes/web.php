@@ -25,49 +25,46 @@ use App\Http\Controllers\ListingController;
 // update - update listing
 // destroy - Delete listing
 
+// LISTINGCONTROLLER ROUTE GROUP
+Route::controller(ListingController::class)->group(function(){
 // All Listings
 // get the ListingController class in Controllers folder and the public function index
-Route::get('/', [ListingController::class, 'index']);
-
+Route::get('/', 'index');
 // SHOW CREATE FORM
 // before create or posting a job make sure you are logged in -> uses middleware
-Route::get('/listings/create', [ListingController::class,'create'])->middleware('auth');
-
+Route::get('/listings/create', 'create')->middleware('auth');
 // Store listing data (add new listing)
-Route::post('/listings', [ListingController::class, 'store'])->middleware('auth');
-
+Route::post('/listings','store')->middleware('auth');
 // Show Edit form
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
-
+Route::get('/listings/{listing}/edit', 'edit')->middleware('auth');
 // Update listing data
-Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
-
+Route::put('/listings/{listing}', 'update')->middleware('auth');
 // Delete listing data
-Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
-
+Route::delete('/listings/{listing}', 'destroy')->middleware('auth');
 // Manage Listings
-Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
-
+Route::get('/listings/manage', 'manage')->middleware('auth');
 // Single listing
 // get the ListingController class in Controllers folder and the public function show
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
+Route::get('/listings/{listing}', 'show');
+});
 
+
+// USERCONTROLLER ROUTE GROUP
+Route::controller(UserController::class)->group(function(){
 // Show Register/Create Form
 // if you are logged in, you can't go to the url register -> uses middleware
-Route::get('/register', [UserController::class, 'create'])->middleware('guest');
-
+Route::get('/register', 'create')->middleware('guest');
 // Create new user
-Route::post('/users', [UserController::class, 'store']);
-
+Route::post('/users', 'store');
 // Log User Out
-Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
-
+Route::post('/logout', 'logout')->middleware('auth');
 // Show login form
 // redirect to login page if the user tries to manipulate the app (post a job);
-Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
-
+Route::get('/login', 'login')->name('login')->middleware('guest');
 // Login User
-Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+Route::post('/users/authenticate','authenticate');
+});
+
 
 
 // for reference

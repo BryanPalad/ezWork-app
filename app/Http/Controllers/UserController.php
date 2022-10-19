@@ -13,6 +13,11 @@ class UserController extends Controller
         return view('users.register');
     }
 
+    // SHOW EDIT USER FORM 
+    public function edit(){
+        return view('users.profile', ['user' => auth()->user()]);
+    }
+
     // CREATE NEW USER
     public function store(Request $request){
         $formFields = $request->validate([
@@ -32,15 +37,16 @@ class UserController extends Controller
         return redirect('/')->with('message', 'User created and logged in');
     }
 
-
     // LOGOUT USER
     public function logout(Request $request){
+
         auth()->logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return redirect('/')->with('message', 'You have been logged out!');
+        
     }
 
     // SHOW LOGIN FORM
@@ -55,7 +61,7 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
-        if(auth()->attempt($formFields)){
+        if (auth()->attempt($formFields)){
             $request->session()->regenerate();
 
             return redirect('/')->with('message', 'You are now logged in!');

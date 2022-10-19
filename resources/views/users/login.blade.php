@@ -55,11 +55,12 @@
                          <div class="mt-8">
                              <p>
                                  Don't have an account?
-                                 <a href="/register" class="text-black hover:text-title"
-                                     >Register</a
+                                 <a href="/register" class="text-title font-medium"
+                                     >Register here</a
                                  >
                              </p>
                          </div>
                      </form>
     </x-card>
+    <x-footer class='fixed bottom-0 left-0'/> 
  </x-layout>

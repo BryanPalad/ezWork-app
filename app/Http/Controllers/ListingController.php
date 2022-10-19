@@ -13,7 +13,7 @@ class ListingController extends Controller
         // get the folder index.blade.php under views\listings
         return view('listings.index', [
             // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
-            'listings' => Listing::latest()->filter(request(['tag', 'searchjob', 'searchlocation']))->paginate(8)
+            'listings' => Listing::latest()->filter(request(['tag', 'searchjob', 'searchlocation']))->paginate(7)
             // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->simplePaginate(6)
         ]);
     }

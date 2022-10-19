@@ -1,4 +1,5 @@
 <x-layout>
+    <div class='container mx-auto flex flex-col items-center justify-center'>
     <x-card class="p-10">
         <header>
             <h1
@@ -15,10 +16,16 @@
                 <tr class="border-gray-300">
                     <td
                         class="px-4 py-8 border-t border-b border-gray-300 text-lg"
-                    >
+                    >   
+                    <div class='flex gap-2 items-center'>
+                        <img
+                        class="hidden w-12 h-12 md:block"
+                        src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('images/no-image.png')}}"
+                        alt=""/>
                         <a href="/listings/{{$listing->id}}/edit">
                             {{$listing->company}}
                         </a>
+                    </div>
                     </td>
                     <td
                     class="px-4 py-8 border-t border-b border-gray-300 text-lg"
@@ -62,4 +69,6 @@
             </tbody>
         </table>
     </x-card>
+</div>
+    <x-footer/>
 </x-layout>

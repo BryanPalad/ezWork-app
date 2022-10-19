@@ -1,12 +1,9 @@
 <x-layout>
-<div class="container mx-auto">
+<div class="container mx-auto flex flex-col items-center justify-center">
     @include('partials._search')
 
-    <a href="/" class="inline-block text-black ml-4 mb-4"
-    ><i class="fa-solid fa-arrow-left"></i> Back
-</a>
 <div class="mx-4">
-    <x-card class='p-10'>
+    <x-card class='p-10 mt-6'>
         <div
             class="flex flex-col items-center justify-center text-center"
         >
@@ -34,7 +31,7 @@
                     {{$listing->description}}
                     <a
                         href="mailto:{{$listing->email}}"
-                        class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"
+                        class="block bg-title text-white mt-6 py-2 rounded-xl hover:opacity-80"
                         ><i class="fa-solid fa-envelope"></i>
                         Contact Employer</a
                     >
@@ -64,4 +61,5 @@
     </x-card> --}}
 </div>
 </div>
+<x-footer/>
 </x-layout>
