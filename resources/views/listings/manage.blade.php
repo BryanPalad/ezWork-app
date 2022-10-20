@@ -9,7 +9,7 @@
             </h1>
         </header>
 
-        <table class="w-full table-auto rounded-sm">
+        <table class="w-auto table-auto rounded-sm">
             <tbody>
                 @unless($listings->isEmpty())
                 @foreach($listings as $listing)

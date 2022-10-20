@@ -20,5 +20,5 @@
             {{$listings->links()}}
         </div>
 </div>
-    <x-footer class='fixed bottom-0 left-0'/>
+    <x-footer class='relative lg:fixed bottom-0 left-0'/>
     </x-layout>

@@ -3,8 +3,8 @@
  {{-- <footer class ='bottom-0 left-0 w-full flex items-center justify-start font-bold bg-black
     text-white h-20 mt-24 md:justify-center'> --}}
 <footer {{ $attributes->merge(['class' => 'w-full flex items-center justify-start font-bold bg-black
-    text-white h-20 mt-24 md:justify-center'])}}>
-    <div class='flex justify-between items-center w-full flex-wrap px-4'>
+    text-white h-auto lg:h-20 mt-24 md:justify-center'])}}>
+    <div class='flex flex-col justify-between items-center w-full flex-wrap px-4 lg:flex-row'>
         <p class="ml-2"> © 2022 All Rights Reserved</p>
         <p class="ml-2">Bryan Palad | Made with Laravel & Tailwind CSS</p>
         <a

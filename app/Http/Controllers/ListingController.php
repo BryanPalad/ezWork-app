@@ -97,7 +97,7 @@ class ListingController extends Controller
 
         // if all fields completed redirect to the homepage.
         // return redirect('/')->with('success', 'Listing created successfully');
-        return back()->with('message', 'Listing updated successfully');
+        return back()->with('message', 'Job post updated successfully');
     }
 
     // DELETE LISTING DATA
@@ -108,7 +108,7 @@ class ListingController extends Controller
         }
 
         $listing->delete();
-        return redirect('/')->with('message', 'Listing deleted successfully');
+        return redirect('/')->with('message', 'Job post deleted successfully');
     }
 
     // MANAGE LISTINGS

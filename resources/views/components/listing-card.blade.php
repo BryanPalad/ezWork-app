@@ -9,7 +9,7 @@
             class="hidden w-24 h-24 mr-6 md:block"
             src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('images/no-image.png')}}"
             alt=""/>
-            <div class='flex flex-col'>
+            <div class='flex flex-col w-full items-center lg:items-start'>
             <h3 class="text-2xl">
                 {{$listing->title}}
             </h3>
